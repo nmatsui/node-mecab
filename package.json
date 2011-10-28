@@ -1,0 +1,8 @@
+{
+   "name": "mecab",
+   "version": "0.0.1",
+   "main": "./index.js",
+   "scripts" :
+     { "preinstall" : "node-waf configure build" }
+}
+
