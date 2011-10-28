@@ -9,12 +9,37 @@ $ npm install mecab & npm link mecab
 
 使い方:
 
-//普通に
+// 簡易版
+mecab = require("mecab");
+console.log( mecab.parse("こちら葛飾区亀有公園前派出所"));
+
+[ [ 'こちら',
+    '名詞',
+    '一般',
+    '*',
+    '*',
+    '*',
+    '*',
+    'こちら',
+    '*',
+    '*',
+    '*' ],
+  [ '葛飾区',
+    '名詞',
+    '一般',
+    '*',
+    '*',
+    '*',
+    '*',
+    '葛飾区',
+    '*',
+    '*',
+    '' ],
+  [ '亀有公園',
+...
+
+
+//MeCab のオブジェクトから
 MeCab = require("mecab").MeCab;
 var nomal = new MeCab.Tagger();
 console.log( nomal.parse("すもももももももものうち"));
-
-//わかち
-var wakati = new MeCab.Tagger("-O wakati");
-console.log(wakati.parse("すもももももももものうち"));
-
