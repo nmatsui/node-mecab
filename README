@@ -2,11 +2,19 @@ node-mecab
 
 これはC++で組まれたnode.js用のMeCabバインディングです。
 内部的にプロセスを立ちあげたりということはしていないのでそこそこ速いです(たぶん)。
-使い方はtest.jsを見れば一発です。使い方は今のところその一通りのみです。
 
-コンパイル方法:
-$ node-waf configure build
+インストール:
+$ npm install mecab & npm link mecab
 
-あとは"./build/default/mecab.node"を適当にコピーして使ってください(やっつけですみません)。
 
-# これをforkしてpackage.jsonくっつけてnpmにでも投げてくれる人が現れないかなー(ﾎﾞｿｯ
+使い方:
+
+//普通に
+MeCab = require("mecab").MeCab;
+var nomal = new MeCab.Tagger();
+console.log( nomal.parse("すもももももももものうち"));
+
+//わかち
+var wakati = new MeCab.Tagger("-O wakati");
+console.log(wakati.parse("すもももももももものうち"));
+

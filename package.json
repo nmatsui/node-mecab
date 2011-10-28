@@ -2,6 +2,8 @@
    "name": "mecab",
    "version": "0.0.1",
    "main": "./index.js",
+   "author": "Koutaro Chikuba <miz404@gmail.com>",
+   "description" : "mecab bindings"
    "scripts" :
      { "preinstall" : "node-waf configure build" }
 }
