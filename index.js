@@ -1,4 +1,16 @@
-var MeCab = new require('./build/default/mecab');
+var MeCab
+try {
+  MeCab = new require('./build/default/mecab');
+}
+catch (e) {
+  if (e.message.match('Cannot find module')) {
+    MeCab = new require('./build/Release/mecab');
+  }
+  else {
+    throw e;
+  }
+}
+
 exports.MeCab = MeCab;
 
 var nomal = new MeCab.Tagger();

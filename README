@@ -3,11 +3,15 @@ node-mecab
 これはC++で組まれたnode.js用のMeCabバインディングです。
 内部的にプロセスを立ちあげたりということはしていないのでそこそこ速いです(たぶん)。
 
-インストール:
-$ git clone git://github.com/mizchi/node-mecab.git
-$ cd node-mecab
-$ npm install .  & npm link mecab
+v0.5.5から、node-wafでビルドする際に作成されるディレクトリが$builddir/defaultから$builddir/Releaseに変更されたため、requireするディレクトリを切り替える処理をindex.jsに付け加えました
 
+インストール:
+$ git clone git://github.com/nmatsui/node-mecab.git
+$ cd node-mecab/
+$ npm install .
+$ npm link
+$ cd ../hoge/
+$ npm link mecab
 
 使い方:
 
