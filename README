@@ -3,7 +3,8 @@ node-mecab
 これはC++で組まれたnode.js用のMeCabバインディングです。
 内部的にプロセスを立ちあげたりということはしていないのでそこそこ速いです(たぶん)。
 
-v0.5.5から、node-wafでビルドする際に作成されるディレクトリが$builddir/defaultから$builddir/Releaseに変更されたため、requireするディレクトリを切り替える処理をindex.jsに付け加えました
+v0.5.5から、node-wafでビルドする際に作成されるディレクトリが$builddir/defaultから$builddir/Releaseに変更されたため、requireするディレクトリを切り替える処理をindex.jsに付け加えました。
+またTaggerをオプション付きでインスタンス化できるようにoptionsメソッドを追加しました。
 
 インストール:
 $ git clone git://github.com/nmatsui/node-mecab.git
@@ -43,6 +44,21 @@ console.log( mecab.parse("こちら葛飾区亀有公園前派出所"));
     '' ],
   [ '亀有公園',
 ...
+
+// 追加辞書を指定するオプション
+mecab.options("-u xxx.dic");
+console.log( mecab.parse("こちら葛飾区亀有公園前派出所"));
+
+[ [ 'こちら葛飾区亀有公園前派出所',
+    '名詞',
+    '一般',
+    '*',
+    '*',
+    '*',
+    '*',
+    'こちら葛飾区亀有公園前派出所',
+    '*',
+    '*' ] ]
 
 
 //MeCab のオブジェクトから

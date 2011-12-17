@@ -14,6 +14,11 @@ catch (e) {
 exports.MeCab = MeCab;
 
 var nomal = new MeCab.Tagger();
+
+exports.options = function(opt) {
+  nomal = new MeCab.Tagger(opt);
+}
+
 exports.parse = function(text) {
   var buf, i, row, _i, _len;
   row = nomal.parse(text).split("\n");
@@ -27,4 +32,3 @@ exports.parse = function(text) {
   }
   return buf;
 };
-
